@@ -54,6 +54,12 @@ typedef NS_OPTIONS(NSUInteger, SDWebImageDownloaderOptions) {
      * Scale down the image
      */
     SDWebImageDownloaderScaleDownLargeImages = 1 << 8,
+    
+    /**
+     * Continue to download body data ignore 404 code
+     */
+    SDWebImageDownloaderIgnoreStatusCode404 = 1 << 9,
+    
 };
 
 typedef NS_ENUM(NSInteger, SDWebImageDownloaderExecutionOrder) {

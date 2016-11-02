@@ -94,7 +94,13 @@ typedef NS_OPTIONS(NSUInteger, SDWebImageOptions) {
      * images to a size compatible with the constrained memory of devices.
      * If `SDWebImageProgressiveDownload` flag is set the scale down is deactivated.
      */
-    SDWebImageScaleDownLargeImages = 1 << 12
+    SDWebImageScaleDownLargeImages = 1 << 12,
+    
+    /**
+     * Sometimes response status code is 404 while response body contains image data.
+     * This is not standard but it happens, so if you want to continue to download image after receive a 404 code, just set this flag
+     */
+    SDWebImageIgnoreStatusCode404 = 1 << 13
 };
 
 typedef void(^SDExternalCompletionBlock)(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL);
